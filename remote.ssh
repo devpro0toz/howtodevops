@@ -1,0 +1,8 @@
+# local instance
+ssh-keygen -b 2048 -P '' -f ~/.ssh/id_rsa
+cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
+
+# remote instance
+ssh-copy-id -i ~/.ssh/id_rsa.pub 192.168.1.1
+
+# more: https://www.digitalocean.com/community/tutorials/how-to-use-ssh-to-connect-to-a-remote-server-in-ubuntu
